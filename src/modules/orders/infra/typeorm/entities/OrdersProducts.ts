@@ -3,7 +3,6 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  JoinColumn,
   PrimaryGeneratedColumn,
   ManyToOne,
 } from 'typeorm';
@@ -11,24 +10,34 @@ import {
 import Order from '@modules/orders/infra/typeorm/entities/Order';
 import Product from '@modules/products/infra/typeorm/entities/Product';
 
+@Entity('orders_products')
 class OrdersProducts {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @ManyToOne(type => Order, order => order.order_products)
   order: Order;
 
+  @ManyToOne(type => Product, product => product.order_products)
   product: Product;
 
-  product_id: string;
+  @Column('uuid')
+  productId: string;
 
-  order_id: string;
+  @Column('uuid')
+  orderId: string;
 
+  @Column({ type: 'decimal', precision: 12, scale: 2 })
   price: number;
 
+  @Column('integer')
   quantity: number;
 
-  created_at: Date;
+  @CreateDateColumn()
+  createdAt: Date;
 
-  updated_at: Date;
+  @UpdateDateColumn()
+  updatedAt: Date;
 }
 
 export default OrdersProducts;

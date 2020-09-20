@@ -23,13 +23,14 @@ class Product {
   @Column('integer', { default: 0 })
   quantity: number;
 
-  // order_products: OrdersProducts[];
+  @OneToMany(type => OrdersProducts, orders => orders.product)
+  order_products: OrdersProducts[];
 
   @CreateDateColumn()
-  created_at: Date;
+  createdAt: Date;
 
   @UpdateDateColumn()
-  updated_at: Date;
+  updatedAt: Date;
 }
 
 export default Product;

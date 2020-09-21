@@ -16,7 +16,7 @@ class Order {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(type => Customer)
+  @ManyToOne(type => Customer, { eager: true })
   customer: Customer;
 
   @OneToMany(type => OrdersProducts, orderProducts => orderProducts.order, {

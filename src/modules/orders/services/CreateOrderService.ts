@@ -74,7 +74,7 @@ class CreateOrderService {
 
         return {
           price: stored.price,
-          productId: stored.id,
+          product_id: stored.id,
           quantity: informedProduct.quantity,
         };
       }),

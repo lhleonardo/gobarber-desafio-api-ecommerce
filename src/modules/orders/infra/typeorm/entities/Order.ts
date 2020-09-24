@@ -17,6 +17,7 @@ class Order {
   id: string;
 
   @ManyToOne(type => Customer, { eager: true })
+  @JoinColumn({ name: 'customer_id' })
   customer: Customer;
 
   @OneToMany(type => OrdersProducts, orderProducts => orderProducts.order, {
@@ -26,10 +27,10 @@ class Order {
   order_products: OrdersProducts[];
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 }
 
 export default Order;

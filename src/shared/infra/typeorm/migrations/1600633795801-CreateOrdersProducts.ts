@@ -15,12 +15,12 @@ export default class CreateOrdersProducts1600633795801
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'orderId',
+            name: 'order_id',
             type: 'uuid',
             isNullable: false,
           },
           {
-            name: 'productId',
+            name: 'product_id',
             type: 'uuid',
             isNullable: false,
           },
@@ -36,20 +36,20 @@ export default class CreateOrdersProducts1600633795801
             scale: 2,
             isNullable: false,
           },
-          { name: 'createdAt', type: 'timestamp', default: 'now()' },
-          { name: 'updatedAt', type: 'timestamp', default: 'now()' },
+          { name: 'created_at', type: 'timestamp', default: 'now()' },
+          { name: 'updated_at', type: 'timestamp', default: 'now()' },
         ],
 
         foreignKeys: [
           {
-            columnNames: ['orderId'],
+            columnNames: ['order_id'],
             referencedTableName: 'orders',
             referencedColumnNames: ['id'],
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
           },
           {
-            columnNames: ['productId'],
+            columnNames: ['product_id'],
             referencedTableName: 'products',
             referencedColumnNames: ['id'],
             onUpdate: 'CASCADE',

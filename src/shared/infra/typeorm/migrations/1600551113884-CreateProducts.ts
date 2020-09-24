@@ -16,8 +16,8 @@ export default class CreateProducts1600551113884 implements MigrationInterface {
           { name: 'name', type: 'varchar' },
           { name: 'price', type: 'decimal', precision: 12, scale: 2 },
           { name: 'quantity', type: 'int' },
-          { name: 'createdAt', type: 'timestamp', default: 'now()' },
-          { name: 'updatedAt', type: 'timestamp', default: 'now()' },
+          { name: 'created_at', type: 'timestamp', default: 'now()' },
+          { name: 'updated_at', type: 'timestamp', default: 'now()' },
         ],
       }),
     );

@@ -16,8 +16,8 @@ export default class CreateCustomers1600549011925
           },
           { name: 'name', type: 'varchar' },
           { name: 'email', type: 'varchar' },
-          { name: 'createdAt', type: 'timestamp', default: 'now()' },
-          { name: 'updatedAt', type: 'timestamp', default: 'now()' },
+          { name: 'created_at', type: 'timestamp', default: 'now()' },
+          { name: 'updated_at', type: 'timestamp', default: 'now()' },
         ],
       }),
     );
